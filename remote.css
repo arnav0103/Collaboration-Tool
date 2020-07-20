@@ -24,4 +24,8 @@ body {
 #about {
     height: 100vh;   
     background-color: whitesmoke;
+    padding: 8%;
+}
+#jumbo {
+    width: 70%;
 }
