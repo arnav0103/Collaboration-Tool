@@ -34,3 +34,33 @@ class Team(db.Model):
         self.name = name
         self.users.team_owner = owner
         self.password_hash = generate_password_hash(password)
+
+class Upcoming(db.Model):
+    __tablename__ = 'upcoming'
+    id = db.Column(db.Integer, primary_key = True)
+    teamid = db.Column(db.Integer, db.ForeignKey('teams.id'))
+    event = db.Column(db.String)
+
+    def __init__(self,teamid,event):
+        self.teamid = teamid
+        self.event = event
+
+class Ongoing(db.Model):
+    __tablename__ = 'ongoing'
+    id = db.Column(db.Integer, primary_key = True)
+    teamid = db.Column(db.Integer, db.ForeignKey('teams.id'))
+    event = db.Column(db.String)
+
+    def __init__(self,teamid,event):
+        self.teamid = teamid
+        self.event = event
+
+class Completed(db.Model):
+    __tablename__ = 'completed'
+    id = db.Column(db.Integer, primary_key = True)
+    teamid = db.Column(db.Integer, db.ForeignKey('teams.id'))
+    event = db.Column(db.String)
+
+    def __init__(self,teamid,event):
+        self.teamid = teamid
+        self.event = event
