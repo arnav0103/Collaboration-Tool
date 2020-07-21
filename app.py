@@ -5,7 +5,7 @@ from flask_login import current_user
 
 @app.route('/')
 def index():
-    return render_template("index.html")
-    
+    return render_template("index.htm")
+
 if __name__ == '__main__':
     app.run(debug=True)
